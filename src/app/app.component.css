@@ -1,0 +1,19 @@
+label {
+    color : black
+}
+
+input { 
+    display: flex;
+    align-items: center;
+}
+
+form 
+{
+    background-color: #A0A0A0
+}
+
+button 
+{
+    color : #202020;
+    background-color: #E5FFCC;
+}

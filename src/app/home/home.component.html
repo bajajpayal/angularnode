@@ -1,0 +1,35 @@
+
+<form >
+  <div class="form-group" >
+  
+    <div class="input-group form-control">
+        <span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i></span>
+    <input [(ngModel)]="name" type = "text" name = "name" placeholder="Enter Name"/><br/>
+  
+  </div>
+  
+  <div class="form-control">
+  
+    <input [(ngModel)]="password" type = "password" name = "password" placeholder="Enter Password"/><br/>
+  
+  </div>
+    <div class="form-control">
+  
+    <input [(ngModel)]="email" type = "email" name = "email" placeholder="Enter Email"/><br/>
+  
+    </div>
+    <div class="form-control">
+  
+    <input [(ngModel)]="phone" type = "number" name = "phone" placeholder="Enter Phone"/><br/><br/>
+  
+    </div>
+  
+    <div class="form-control">
+    <button type="button" name = "button" (click)="send(name,password,email,phone)"> Submit</button>
+    <br/>
+  
+    </div>
+  
+  </div>
+  
+  </form>
