@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     this.dataService.fetchData().subscribe(
       (data)=>
       {
+        localStorage.setItem('currentuser', JSON.stringify({name : data.result}));
         this.array = data.result;
         console.log(this.array);
       })
