@@ -9,6 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectoryComponent } from './directory/directory.component';
 import 'rxjs/add/operator/map';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { DatePickerModule } from 'ng2-datepicker';
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +24,11 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     appRoutingModule,
     FormsModule,
     HttpModule,
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    DatePickerModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA5JMO58ooq9YNuYQO1x4pg3TgA6zYSJ2Y'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

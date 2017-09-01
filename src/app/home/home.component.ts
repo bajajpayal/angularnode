@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,40 @@ import { DataService } from '../data.service';
   providers:[DataService]
 })
 export class HomeComponent implements OnInit {
+
+  // lat: number = 42.858217;
+  // lng: number = -70.929990;
+  // zoon:number = 10;
+
+  // marker : marker [] = [
+  //   {
+  //     name : 'compant one',
+  //     lat : 42.858234,
+  //     lng : -70.929321,
+  //     draggable : true 
+
+  //   },
+  //   {
+  //     name : 'compant one',
+  //     lat : 42.858238,
+  //     lng : -70.929333,
+  //     draggable : true 
+
+  //   }, 
+  //   {
+  //     name : 'compant one',
+  //     lat : 42.858245,
+  //     lng : -70.929354,
+  //     draggable : true 
+
+  //   },
+  // ]
+
+  date: DateModel;
+  options: DatePickerOptions;
+
+
+
    array = [];
    settings = {
     columns: {
@@ -25,8 +60,11 @@ export class HomeComponent implements OnInit {
       }
     }
   };
-  constructor(private dataService : DataService) { }
+  constructor(private dataService : DataService) { 
+    this.options = new DatePickerOptions();
+  }
 
+  
   ngOnInit() {
    
     this.dataService.fetchData().subscribe(
@@ -37,20 +75,21 @@ export class HomeComponent implements OnInit {
         console.log(this.array);
       })
 
-      this.dataService.updateData().subscribe(
-        data=>
-        {
-          console.log("done")
-        }
-      )
+    //   this.dataService.updateData().subscribe(
+    //     data=>
+    //     {
+    //       console.log("done")
+    //     }
+    //   )
 
-      this.dataService.deleteData().subscribe(
-        data=>
-        {
-          console.log("delete done");
-        }
-      )
+    //   this.dataService.deleteData().subscribe(
+    //     data=>
+    //     {
+    //       console.log("delete done");
+    //     }
+    //   )
   } 
+  
 
   send(name,password,email,phone)
   {
@@ -59,3 +98,10 @@ export class HomeComponent implements OnInit {
     )
   }
 }
+
+// interface marker  {
+//   name : string,
+//   lat : number , 
+//   lng : number,
+//   draggable : boolean
+//     }

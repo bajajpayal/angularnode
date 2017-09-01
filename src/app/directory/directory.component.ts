@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectoryComponent implements OnInit {
 
+
+  name = 'payal';
+  password: 'payal21';
+  email = 'bajaj.payal@gmail.com';
+  phone = '483654785';
   constructor() { }
 
   ngOnInit() {

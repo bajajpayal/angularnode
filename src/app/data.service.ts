@@ -8,14 +8,14 @@ export class DataService {
 
   sendData(name,password,email,phone)
   {
-    let headers = new Headers({ 'Content-Type': 'application/json','Accept': 'application/json', });
+    var fd = new FormData();
+    fd.append('name',name);
+    fd.append('password',password);
+    fd.append('email',email);
+    fd.append('phoneNo',phone);
+    let headers = new Headers();
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('http://localhost:8001/users/signUp',{
-    name : name,
-    password:password,
-    email:email,
-    phoneNo:phone
-    } ,options)
+    return this.http.post('http://localhost:8001/users/signUp',fd,options)
   }
 
   fetchData ()
