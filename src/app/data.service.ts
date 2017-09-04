@@ -25,6 +25,13 @@ export class DataService {
      )
   }
 
+  login (email,password)
+  {
+    var fd = new FormData();
+    fd.append('email',email);
+    fd.append('password',password);
+    return this.http.post('http://localhost:8000/admin/login',fd);
+  }
   updateData ()
   {
     var body = {

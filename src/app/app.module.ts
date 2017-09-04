@@ -9,8 +9,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DirectoryComponent } from './directory/directory.component';
 import 'rxjs/add/operator/map';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { DatePickerModule } from 'ng2-datepicker';
-import { AgmCoreModule } from '@agm/core';
+import {CalendarModule} from 'primeng/primeng';
+import {AutoCompleteModule} from 'primeng/primeng';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -25,10 +27,9 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     HttpModule,
     Ng2SmartTableModule,
-    DatePickerModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA5JMO58ooq9YNuYQO1x4pg3TgA6zYSJ2Y'
-    })
+    CalendarModule,
+    AutoCompleteModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

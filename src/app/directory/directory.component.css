@@ -1,27 +1,23 @@
 form {
     border: 3px solid #A9A9A9;
     display: block;
-    margin-top: 7rem;
-    margin-left:350px;
-    margin-right: 35rem;
-    height: 50rem;
+    /* margin-top: 7rem;
+    margin-left:30%;
+    margin-right: 30%; */
+    height: 70vh;
     overflow: visible;
     
 }
 
 h3{
     color: blue;
-    margin: 10px 5px
 }
 
 label{
-    margin-top: 20px;
     text-align: center
 }
  input[type=text], input[type=password]
  {
-     width : 40%;
-     margin : 4px;
      padding: 10px 20px;
      display: block;
      border: 1px solid #ccc;
@@ -36,20 +32,11 @@ label{
  button{
      width: 12rem;
      height: 40px;
+     margin: 15px;
      background-color: #808080;
-     margin: 12px 10px;
-     padding: 8px 20px;
      border: none;
      cursor: pointer
  }
  button:hover{
-    color: red;
     font-size: 15px
- }
- a{
-     margin: 20%
- }
-
- .container{
-     padding: 1rem 
  }

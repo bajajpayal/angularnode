@@ -1,24 +1,37 @@
-<form>
+
+
+<section class="col-md-10" style="padding:10vh 60vh;">
+  <div>
+  <form style="padding:5vh;">
 
   <h3>Login Form </h3>
-  <div class="container">
-    
-    <label for="username"><b>UserName</b></label>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input type="text" placeholder="Enter Name" name="username">
+  <div>
+    <div class="row">
+      <div class="col-md-8">
+    <label for="email"><b>UserName</b></label>
+      </div>
     </div>
+      <div class="row"> 
+    <div class="col-md-4">
+    <div class="input-group">
+     
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="email">
+    </div> 
+   </div>
+</div>
+    
 
     <label for="password"><b>Password</b></label>
     <div class="input-group">
         <span class="input-group-addon"><small><i class="glyphicon glyphicon-lock" small></i></small></span>
-    <input type="password" placeholder="Enter Password" name="password">
+    <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password">
     </div>
 
-    <button type="button">Login</button>
+    <button type="button" (click)="checkLogin(email,password)">Login</button>
     <input type="checkbox">Remember me
 
-
+    
   </div>
 
   <div class="container">
@@ -27,3 +40,5 @@
 
   </div>
 </form>
+  </div>
+</section>
