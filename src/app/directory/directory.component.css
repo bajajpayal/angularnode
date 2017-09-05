@@ -12,31 +12,65 @@ form {
 h3{
     color: blue;
 }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
 
-label{
-    text-align: center
+  .loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    z-index: 1;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+  }
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 8s
+  }
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+label{      
+    text-align: center;
+    margin-top: 10px;
 }
  input[type=text], input[type=password]
  {
      padding: 10px 20px;
      display: block;
      border: 1px solid #ccc;
-     box-sizing: border-box;
+     
  }
 
  .glyphicon {
     font-size: 15px;
-    height: 10px
+    /* height: 10px */
 }
 
  button{
-     width: 12rem;
-     height: 40px;
-     margin: 15px;
-     background-color: #808080;
-     border: none;
-     cursor: pointer
+    padding: 1vh;
+     cursor: pointer;
+     color:blue
  }
  button:hover{
     font-size: 15px
+ }
+
+ a{
+     margin-top: 18px
  }

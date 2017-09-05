@@ -67,13 +67,13 @@ export class HomeComponent implements OnInit {
   
   ngOnInit() {
    
-    // this.dataService.fetchData(email,password).subscribe(
-    //   (data)=>
-    //   {
-    //     localStorage.setItem('currentuser', JSON.stringify({name : data.result}));
-    //     this.array = data.result;
-    //     console.log(this.array);
-    //   })
+    this.dataService.fetchData().subscribe(
+      (data)=>
+      {
+        localStorage.setItem('currentuser', JSON.stringify({name : data.result}));
+        this.array = data.result;
+        console.log(this.array);
+      })
 
     //   this.dataService.updateData().subscribe(
     //     data=>

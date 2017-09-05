@@ -12,6 +12,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import {CalendarModule} from 'primeng/primeng';
 import {AutoCompleteModule} from 'primeng/primeng';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MessagesModule} from 'primeng/primeng';
+import {ToastModule} from 'ng2-toastr/ng2-toastr';
+import {GrowlModule} from 'primeng/primeng';
 
 
 
@@ -29,7 +32,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Ng2SmartTableModule,
     CalendarModule,
     AutoCompleteModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MessagesModule,
+    GrowlModule,
+    ToastModule.forRoot()
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

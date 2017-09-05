@@ -1,44 +1,41 @@
 
 
 <section class="col-md-10" style="padding:10vh 60vh;">
-  <div>
-  <form style="padding:5vh;">
+<!--   
+  <form style="padding:5vh;"> -->
 
+
+  <div class="form-group" style="padding:5vh;border: 3px solid #A9A9A9;display: block;height: 70vh;
+  overflow: visible;">
   <h3>Login Form </h3>
-  <div>
-    <div class="row">
-      <div class="col-md-8">
     <label for="email"><b>UserName</b></label>
-      </div>
-    </div>
-      <div class="row"> 
-    <div class="col-md-4">
+     
     <div class="input-group">
      
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input type="text" placeholder="Enter Email" name="email" [(ngModel)]="email">
+    <input type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="email">
     </div> 
-   </div>
-</div>
     
-
+<div class="form-group">
     <label for="password"><b>Password</b></label>
     <div class="input-group">
         <span class="input-group-addon"><small><i class="glyphicon glyphicon-lock" small></i></small></span>
-    <input type="password" placeholder="Enter Password" name="password" [(ngModel)]="password">
+    <input type="password" class="form-control" placeholder="Enter Password" name="password" [(ngModel)]="password">
     </div>
-
-    <button type="button" (click)="checkLogin(email,password)">Login</button>
+</div>
+<div class="form-group">
+    <button type="button" pButton class="form-control"  (click)="checkLogin(email,password)">Login</button>
+</div>
     <input type="checkbox">Remember me
 
     
+  
+  <div class="form-group">
+    <a href="#"><b>Forget Password</b></a>
   </div>
-
-  <div class="container">
-
-    <a href="#">forget password</a>
-
+  <div>
+        <p-growl [(value)]="msgs"></p-growl>
   </div>
-</form>
-  </div>
+</div>
+<!-- </form> -->
 </section>
