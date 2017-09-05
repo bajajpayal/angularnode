@@ -9,7 +9,7 @@ import { DatePickerOptions, DateModel } from 'ng2-datepicker';
   providers:[DataService]
 })
 export class HomeComponent implements OnInit {
-
+  options: Object;
   // lat: number = 42.858217;
   // lng: number = -70.929990;
   // zoon:number = 10;
@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
   // ]
 
   date: DateModel;
-  options: DatePickerOptions;
+  //options: DatePickerOptions;
 
 
 
@@ -62,6 +62,12 @@ export class HomeComponent implements OnInit {
   };
   constructor(private dataService : DataService) { 
     this.options = new DatePickerOptions();
+    this.options = {
+      title : { text : 'simple chart' },
+      series: [{
+          data: [29.9, 71.5, 106.4, 129.2],
+      }]
+  };
   }
 
   

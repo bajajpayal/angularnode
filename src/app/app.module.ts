@@ -15,9 +15,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MessagesModule} from 'primeng/primeng';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {GrowlModule} from 'primeng/primeng';
+import { ChartModule } from 'angular2-highcharts';
 
-
-
+declare var require : any;
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +35,8 @@ import {GrowlModule} from 'primeng/primeng';
     BrowserAnimationsModule,
     MessagesModule,
     GrowlModule,
-    ToastModule.forRoot()
-    
+    ToastModule.forRoot(),
+    ChartModule.forRoot(require('highcharts'))
   ],
   providers: [],
   bootstrap: [AppComponent]
