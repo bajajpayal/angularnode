@@ -10,53 +10,21 @@ import { DatePickerOptions, DateModel } from 'ng2-datepicker';
 })
 export class HomeComponent implements OnInit {
   options: Object;
-  // lat: number = 42.858217;
-  // lng: number = -70.929990;
-  // zoon:number = 10;
 
-  // marker : marker [] = [
-  //   {
-  //     name : 'compant one',
-  //     lat : 42.858234,
-  //     lng : -70.929321,
-  //     draggable : true 
-
-  //   },
-  //   {
-  //     name : 'compant one',
-  //     lat : 42.858238,
-  //     lng : -70.929333,
-  //     draggable : true 
-
-  //   }, 
-  //   {
-  //     name : 'compant one',
-  //     lat : 42.858245,
-  //     lng : -70.929354,
-  //     draggable : true 
-
-  //   },
-  // ]
 
   date: DateModel;
-  //options: DatePickerOptions;
 
-
-
-   array = [];
+   array ;
    settings = {
     columns: {
       _id: {
         title: 'ID'
       },
-      name: {
-        title: 'Full Name'
+      gymName: {
+        title: 'gymName'
       },
-      phoneNo: {
-        title: 'phoneNo'
-      },
-      email: {
-        title: 'Email'
+      gymAdminemail: {
+        title: 'gymAdminemail'
       }
     }
   };
@@ -74,26 +42,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    
     this.dataService.fetchData().subscribe(
-      (data)=>
-      {
-        localStorage.setItem('currentuser', JSON.stringify({name : data.result}));
-        this.array = data.result;
-        console.log(this.array);
-      })
-
-    //   this.dataService.updateData().subscribe(
-    //     data=>
-    //     {
-    //       console.log("done")
-    //     }
-    //   )
-
-    //   this.dataService.deleteData().subscribe(
-    //     data=>
-    //     {
-    //       console.log("delete done");
-    //     }
-    //   )
+      (data)=> {this.array = data
+      console.log(data,"dattata")}
+      )
   } 
   
 

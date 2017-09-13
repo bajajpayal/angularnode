@@ -20,8 +20,12 @@
     <label for="password"><b>Password</b></label>
     <div class="input-group">
         <span class="input-group-addon"><small><i class="glyphicon glyphicon-lock" small></i></small></span>
-    <input type="password" class="form-control" placeholder="Enter Password" name="password" [(ngModel)]="password">
+    <input [type]="showPassword.checked ? 'text' : 'password'" class="form-control" placeholder="Enter Password" name="password" [(ngModel)]="password">
     </div>
+</div>
+  <div class="form-group">
+    <md-checkbox #showPassword > Show Password </md-checkbox>
+
 </div>
 <div class="form-group">
     <button type="button" pButton class="form-control"  (click)="checkLogin(email,password)">Login</button>
@@ -31,7 +35,7 @@
     
   
   <div class="form-group">
-    <a href="#"><b>Forget Password</b></a>
+    <a href="http://localhost:4200/forget"><b>Forget Password</b></a>
   </div>
   <div>
         <p-growl [(value)]="msgs"></p-growl>

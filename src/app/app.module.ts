@@ -15,14 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MessagesModule} from 'primeng/primeng';
 import {ToastModule} from 'ng2-toastr/ng2-toastr';
 import {GrowlModule} from 'primeng/primeng';
-import { ChartModule } from 'angular2-highcharts';
+import { MdCheckboxModule} from '@angular/material';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
-declare var require : any;
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DirectoryComponent
+    DirectoryComponent,
+    ForgetpasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +36,9 @@ declare var require : any;
     BrowserAnimationsModule,
     MessagesModule,
     GrowlModule,
+    MdCheckboxModule,
     ToastModule.forRoot(),
-    ChartModule.forRoot(require('highcharts'))
+    //ChartModule.forRoot(require('highcharts'))
   ],
   providers: [],
   bootstrap: [AppComponent]

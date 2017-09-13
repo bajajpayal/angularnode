@@ -20,17 +20,26 @@ export class DataService {
 
   fetchData ()
   {
-     return this.http.get('http://localhost:8001/users/getAllUsers').map(
-       (res)=>res.json()
-     )
+    var header = new Headers();
+    header.append('x-logintoken','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xMV82KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjAuMC4zMTEyLjExMyBTYWZhcmkvNTM3LjM2IiwiZW1haWwiOiJib29zdGFkbWluQHlvcG1haWwuY29tIiwicmVtb3RlQWRkcmVzcyI6IjEyNy4wLjAuMSIsInJvbGUiOjEsImlkIjoiNTliNzdlMTY4NGQ5NGEwZWU2ZWExMTU5IiwiaWF0IjoxNTA1Mjk2NzYyLCJleHAiOjE1MDc4ODg3NjJ9.lRZ4nfxXNKXV_gvP168VpoahPFEnupMSW8BMyD3droS7mWMlUz0mvUEEplJFckqGkfXa312aRbwKlkwDk0vHPw');
+    //let options = new RequestOptions({ headers: header });
+    // x-logintoken 
+     return this.http.post('http://localhost:8020/v1/boostAdmin/getAllGyms',{},{headers :header}).map(
+       (res)=>res.json())
+  }
+  forgetPassword(email)
+  {
+    return this.http.put('http://localhost:8020/v1/boostAdmin/forgotpassword',JSON.stringify({ "email" : email, "role" : 1}))
   }
 
   login (email,password)
   {
-    var fd = new FormData();
-    fd.append('email',email);
-    fd.append('password',password);
-    return this.http.post('http://localhost:8000/admin/login',fd);
+    var role =1;
+    // var fd = new FormData();
+    // fd.append('email',email);
+    // fd.append('password',password);
+    // fd.append('role',role);
+    return this.http.post('http://localhost:8020/v1/boostAdmin/login',JSON.stringify({"email": email, "password": password,"role":1}));
   }
   updateData ()
   {
