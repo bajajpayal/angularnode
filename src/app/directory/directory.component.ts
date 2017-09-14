@@ -30,6 +30,8 @@ export class DirectoryComponent implements OnInit {
         console.log(mydata.statusCode)
         if(mydata.statusCode ==200)
           {
+            console.log(mydata.result.token, "mydata.result.token")
+            localStorage.setItem('token', mydata.result.token);
             // this.msgs = [];
             // this.msgs.push({severity:'success', summary:'Success Message', detail:'Invalid credentails'});
             this.router.navigate(['home']);

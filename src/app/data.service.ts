@@ -21,7 +21,9 @@ export class DataService {
   fetchData ()
   {
     var header = new Headers();
-    header.append('x-logintoken','eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQWdlbnQiOiJNb3ppbGxhLzUuMCAoTWFjaW50b3NoOyBJbnRlbCBNYWMgT1MgWCAxMF8xMV82KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvNjAuMC4zMTEyLjExMyBTYWZhcmkvNTM3LjM2IiwiZW1haWwiOiJib29zdGFkbWluQHlvcG1haWwuY29tIiwicmVtb3RlQWRkcmVzcyI6IjEyNy4wLjAuMSIsInJvbGUiOjEsImlkIjoiNTliNzdlMTY4NGQ5NGEwZWU2ZWExMTU5IiwiaWF0IjoxNTA1Mjk2NzYyLCJleHAiOjE1MDc4ODg3NjJ9.lRZ4nfxXNKXV_gvP168VpoahPFEnupMSW8BMyD3droS7mWMlUz0mvUEEplJFckqGkfXa312aRbwKlkwDk0vHPw');
+    var token = localStorage.getItem('token');
+    console.log(token,"tokennnn form local storage")
+    header.append('x-logintoken',token);
     //let options = new RequestOptions({ headers: header });
     // x-logintoken 
      return this.http.post('http://localhost:8020/v1/boostAdmin/getAllGyms',{},{headers :header}).map(

@@ -42,8 +42,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
    
     this.dataService.fetchData().subscribe(
-      (data)=> {this.array = data
-      console.log(data,"dattata")}
+      (data)=> {
+        this.array = data.result.gym_data;
+        
+      console.log(data.result.gym_data,"dattata---------------------")}
       )
   } 
   
